@@ -5,7 +5,8 @@ mavsim_python
         3/11/2019 - RWB
 """
 import sys
-sys.path.append('..')
+sys.path.insert(0,"..")
+#sys.path.append('..')
 import numpy as np
 import parameters.simulation_parameters as SIM
 
