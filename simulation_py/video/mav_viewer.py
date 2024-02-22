@@ -8,6 +8,7 @@ import sys
 sys.path.append("..")
 import numpy as np
 import pyqtgraph as pg
+from PyQt5 import QtWidgets  
 import pyqtgraph.opengl as gl
 import pyqtgraph.Vector as Vector
 from tools.drawing import drawMav
@@ -16,7 +17,7 @@ from tools.drawing import drawMav
 class mavViewer():
     def __init__(self):
         # initialize Qt gui application and window
-        self.app = pg.QtGui.QApplication([])  # initialize QT
+        self.app = QtWidgets.QApplication([])  # initialize QT
         self.window = gl.GLViewWidget()  # initialize the view object
         self.window.setWindowTitle('MAV Viewer')
         self.window.setGeometry(0, 0, 1000, 1000)  # args: upper_left_x, upper_right_y, width, height

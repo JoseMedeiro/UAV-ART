@@ -3,6 +3,7 @@ from threading import Lock
 import numpy as np
 from collections import defaultdict
 import pyqtgraph as pg
+from PyQt5 import QtWidgets  
 from pyqtgraph import ViewBox
 import argparse
 from state_plotter.plotter_args import PlotArgs, PlotboxArgs
@@ -46,8 +47,8 @@ class Plotter:
 
         # initialize Qt gui application and window
         self.default_window_size = (1000, 800)
-        self.app = pg.QtGui.QApplication([])
-        self.window = pg.GraphicsWindow(title=window_title)
+        self.app = QtWidgets.QApplication([])
+        self.window = pg.GraphicsLayoutWidget(title=window_title)
         self.window.resize(*self.default_window_size)
         self.window.setBackground(self.background_color)
         self.old_windows = []
